@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/vvo5kgx.css">
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container" id="container">
+    
+    <h1 class="name" id="name"></h1>
+    <h2 class="comment" id="comment"></h2>
+    <h2 class="listHeader">Shopping List</h2>
+    <hr>
+    <!--list-->
+    <div class="list" id="list">
+      <!--Inputs-->
+      <div class="input">
+        <input class="input-aria" id="input-aria" type="text" placeholder="" required>
+
+        <!--Inputs-->
+        <input class="qnty-aria" id="qnty-aria" type="number" placeholder="Quanity" required>
+      </div>
+      <!--Add button-->
+      <div class="circ">
+        
+        <div class="plus radius" id="radius">
+        </div>
+      </div>
+    </div>
+    <!--Table (display)-->
+    <table id="result">
+      <!--Titles-->
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+      </tr>
+    </table>
+    <!--Display paragraph-->
+    <p id="result" class="result"></p>
+     </div>
+
+    <!--scripts-->
+    <script src="js/main.js"></script>
+    <script src="js/list.js"></script>
+  </div>
+</body>
+</html>

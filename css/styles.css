@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .list {
+    flex-direction: row;
+  }
+  
+  .list input,
+  .list .input-form {
+    font-size: 16px;
+    margin: 5px;
+  }
+}
+
+body {
+    background-color: cornflowerblue;
+}
+
+h1 {
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .container {
+    background-color:rgb(255, 255, 255);
+    border-radius: 3px;
+    width: 90%;
+    max-width: 100vw; /* Optional: Adjust the maximum width of the container */
+    height: 90%;
+  }
+
+  .name {
+    margin-left: 1.75vw;
+  }
+
+  .comment {
+    margin-left: 2vw;
+    font-size: 11px;
+    font-size: 1.45vw;
+    overflow-wrap: break-word;
+  }
+  @media screen and (max-width: 768px) {
+    .comment {
+      font-size: 3vw;
+    }
+  }
+
+/*Table*/
+table {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width:90%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/*Headers, etc.*/
+  .listHeader,.result {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*input forms && List*/
+
+.list input,
+.list .input-form {
+  font-size: 20px; /* Increase the font size as per your requirement */
+  margin: 10px; /* Adjust the margin as needed */
+  height: calc(100% - 4px); /* Subtract the total border height from the desired height */
+}
+
+.input-aria,
+.qnty-aria,
+.input-form {
+  font-family: sans-serif;
+  border: none;
+  border: 2px solid rgb(65, 60, 60); /* Adjust the border thickness as needed */
+}
+
+.plus {
+  width:50px;
+  height:50px;
+  display:inline-block;
+  
+  background:
+    linear-gradient(#F87D09 0 0) top left,
+    linear-gradient(#F87D09 0 0) top right,
+    linear-gradient(#F87D09 0 0) bottom left,
+    linear-gradient(#F87D09 0 0) bottom right;
+  background-size: calc(50% - 1px) calc(50% - 1px); /*thickness = 2px (2*1px) */
+  background-repeat:no-repeat;
+  border:10px solid #F87D09; /*length = 30px (50px - 2x10px) */
+  box-sizing:border-box;
+}
+
+.radius {
+  border-radius:50%;
+}
