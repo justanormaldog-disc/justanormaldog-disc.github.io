@@ -74,6 +74,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width:90%;
+  table-layout:fixed;
 }
 
 td, th {
@@ -81,7 +82,6 @@ td, th {
   text-align: left;
   padding: 8px;
   word-wrap:break-word;
-  table-layout:fixed;
 }
 
 tr:nth-child(even) {
