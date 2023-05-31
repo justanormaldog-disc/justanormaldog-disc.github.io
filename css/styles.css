@@ -74,7 +74,6 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width:90%;
-  table-layout:fixed;
 }
 
 td, th {
@@ -82,8 +81,7 @@ td, th {
   text-align: left;
   padding: 8px;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  word-wrap:break-word;
 }
 
 tr:nth-child(even) {
