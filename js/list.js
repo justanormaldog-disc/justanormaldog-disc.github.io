@@ -24,7 +24,7 @@ function CAUitem(itemName, quantity) {
 initList();
 input_button.addEventListener("click", function() {
 if (input_aria.value !== "" && input_qnty.value !=="") {
-CAUitem(input_aria.value,parseInt(input_qnty.value,10));
+CAUitem(input_aria.value,parseFloat(input_qnty.value,10));
 //clears textbox(s)
 input_aria.value = "";
 input_qnty.value = "";
