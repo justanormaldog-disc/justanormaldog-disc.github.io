@@ -3,7 +3,6 @@ var input_button = document.getElementById("radius");
 var input_qnty = document.getElementById("qnty-aria");
 var table = document.getElementById('result');
 var table_element = document.getElementsByTagName("tr");
-var del = document.createElement("input");
 function initList() {
     shop_list = [];
     console.log(input_aria);
@@ -47,6 +46,7 @@ function displayArray(arr) {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
+    global del = document.createElement("input");
     del.type = "button";
     del.setAttribute('class','del-btn'); // Changed from 'id' to 'class'
     row.setAttribute("id", "tab");
@@ -55,13 +55,14 @@ function displayArray(arr) {
     cell2.innerHTML = value;
     cell3.appendChild(del);
     del.setAttribute("id","del-btn");
-
-  }
-}
-del.addEventListener("click", function() {
+      //event listener
+    del.addEventListener("click", function() {
     var i = del.parentNode.parentNode; // Get the parent row
     if (i.tagName === 'TR') { // Check if the parent node is a row
         table.deleteRow(i.rowIndex); // Delete the row
         delete shop_list[i.rowIndex];
     }
 });
+  }
+}
+
