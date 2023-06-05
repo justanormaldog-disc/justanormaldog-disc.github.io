@@ -136,11 +136,11 @@ tr:nth-child(even) {
   margin: 1vh;
 }
 
-#del-btn {
+.del-btn {
   font-family: 'Roboto', sans-serif;
   background-color: cornflowerblue;
-  color: #f4d570;
-  -webkit-text-fill-color: #f4d570;
+  color: #f4708f;
+  -webkit-text-fill-color: #f4708f;
   opacity: 1; /* required on iOS */
   border: none;
   border-radius: 1.5px;
