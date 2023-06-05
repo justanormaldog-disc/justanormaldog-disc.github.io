@@ -53,7 +53,7 @@ function displayArray(arr) {
         var cell3 = row.insertCell(2);
         var del = document.createElement("input");
         del.type = "button";
-        del.setAttribute('id', 'del-btn'); 
+        del.setAttribute('class', 'del-btn'); 
         row.setAttribute("class", "tab");
         del.value = 'Delete';
         cell1.innerHTML = name;
