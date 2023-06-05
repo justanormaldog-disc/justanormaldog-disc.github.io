@@ -10,23 +10,20 @@ function initList() {
     shop_list = [];
 }
 
-function CAUitem(itemName, quantity, addToCurrent = true) {
+function addItem(itemName, quantity) {
     var lowercaseItemName = itemName.toLowerCase();
-    var itemFound = false;
-    for (let i = 0; i < shop_list.length; i++) {
-        if (shop_list[i][0].toLowerCase() === lowercaseItemName) {
-            if (addToCurrent) {
-                shop_list[i][1] += quantity;
-            } else {
-                shop_list[i][1] = quantity;
-            }
-            itemFound = true;
-            break;
-        }
-    }
-    if (!itemFound) {
+    var itemIndex = shop_list.findIndex(function(item) {
+        return item[0].toLowerCase() === lowercaseItemName;
+    });
+  
+    if (itemIndex !== -1) {
+        // Item already exists, update the quantity
+        shop_list[itemIndex][1] += quantity;
+    } else {
+        // Item doesn't exist, add it to the list
         shop_list.push([itemName, quantity]);
     }
+  
     displayArray(shop_list);
 }
 
@@ -34,7 +31,7 @@ initList();
 
 input_button.addEventListener("click", function() {
     if (input_aria.value !== "" && input_qnty.value !== "") {
-        CAUitem(input_aria.value, parseFloat(input_qnty.value), true);
+        addItem(input_aria.value, parseInt(input_qnty.value));
         input_aria.value = "";
         input_qnty.value = "";
     }
