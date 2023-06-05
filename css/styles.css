@@ -1,65 +1,144 @@
-var input_aria = document.getElementById("input-aria");
-var input_button = document.getElementById("radius");
-var input_qnty = document.getElementById("qnty-aria");
-var table = document.getElementById('result');
-var table_element = document.getElementsByTagName("tr");
-function initList() {
-    shop_list = [];
-    console.log(input_aria);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@media screen and (max-width: 768px) {
+  
+  .list {
+    flex-direction: row;
+  }
+  
+  .list input,
+  .list .input-form {
+    font-size: 16px;
+    margin: 5px;
+  }
 }
 
-function CAUitem(itemName, quantity) {
-    for (let i = 0; i < shop_list.length; i++) {
-      if (shop_list[i][0].toLowerCase() === itemName.toLowerCase()) {
-        shop_list[i][1] += quantity;
-        displayArray(shop_list);
-        return;
-      }
+
+h1,h2 {
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    width: 90%;
+    max-width: 100vw;
+    min-height: 90vh;
+    padding: 2vh;
+  }
+
+  .name {
+    margin-left: 1.75vw;
+  }
+
+  .comment {
+    margin-left: 2vw;
+    font-size: 11px;
+    font-size: 1.45vw;
+    overflow-wrap: break-word;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .comment {
+      font-size: 3vw;
     }
-    // If item is not found, add it to the shopping list
-    shop_list.push([itemName, quantity]);
-    displayArray(shop_list);
   }
 
-initList();
-input_button.addEventListener("click", function() {
-if (input_aria.value !== "" && input_qnty.value !=="") {
-CAUitem(input_aria.value,parseFloat(input_qnty.value,10));
-//clears textbox(s)
-input_aria.value = "";
-input_qnty.value = "";
-}});
+/* Table */
 
-//concentates and displays the array
-function displayArray(arr) {
-  // Clear existing rows with id="tab"
-  var tabRows = document.querySelectorAll('#result tr[id="tab"]');
-  tabRows.forEach(function(row) {
-    row.parentNode.removeChild(row);
-  });
+table {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-bottom: 1vh;
+}
 
-  for (var i = 0; i < arr.length; i++) {
-    var item = arr[i];
-    var name = item[0];
-    var value = item[1];  
-    var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var del = document.createElement("input");
-    del.type = "button";
-    del.setAttribute('class','del-btn'); // Changed from 'id' to 'class'
-    row.setAttribute("id", "tab");
-    del.value = 'Delete';
-    cell1.innerHTML = name;
-    cell2.innerHTML = value;
-    cell3.appendChild(del);
-    del.setAttribute("id","del-btn");
-    del.addEventListener("click", function() {
-      var i = del.parentNode.parentNode; // Get the parent row
-      if (i.tagName === 'TR') { // Check if the parent node is a row
-        table.deleteRow(i.rowIndex); // Delete the row
-      }
-    });
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+tr {
+  border: none;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+/* Headers, etc. */
+  .listHeader,.result {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
   }
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* input forms && List */
+
+.input-aria,
+.qnty-aria,
+.input-form {
+  font-family: sans-serif;
+  border: none;
+  border: 2px solid rgb(65, 60, 60); /* Adjust the border thickness as needed */
+}
+
+.list input,
+.list .input-form {
+  font-size: 20px; /* Increase the font size as per your requirement */
+  margin: 10px; /* Adjust the margin as needed */
+  height: calc(100% - 4px); /* Subtract the total border height from the desired height */
+}
+
+.plus {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  
+  background:
+    linear-gradient(#F87D09 0 0) top left,
+    linear-gradient(#F87D09 0 0) top right,
+    linear-gradient(#F87D09 0 0) bottom left,
+    linear-gradient(#F87D09 0 0) bottom right;
+  background-size: calc(50% - 1px) calc(50% - 1px); /* thickness = 2px (2*1px) */
+  background-repeat: no-repeat;
+  border: 10px solid #F87D09; /* length = 30px (50px - 2x10px) */
+  box-sizing: border-box;
+}
+
+.radius {
+  border-radius: 50%;
+  margin: 1vh;
+}
+
+#del-btn {
+  font-family: 'Roboto', sans-serif;
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 1.5px;
 }
