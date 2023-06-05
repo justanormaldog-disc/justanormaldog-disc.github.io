@@ -76,7 +76,7 @@ function displayArray(arr) {
 }
 
 function updateIndices() {
-    var delButtons = document.getElementsByIdName('del-btn');
+    var delButtons = document.getElementsById('del-btn');
     for (var i = 0; i < delButtons.length; i++) {
         delButtons[i].setAttribute("data-index", i);
     }
