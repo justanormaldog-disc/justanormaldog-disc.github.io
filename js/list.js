@@ -46,7 +46,7 @@ function displayArray(arr) {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
-    var del = document.createElement("input");
+    del = document.createElement("input");
     del.type = "button";
     del.setAttribute('class','del-btn'); // Changed from 'id' to 'class'
     row.setAttribute("id", "tab");
@@ -55,11 +55,13 @@ function displayArray(arr) {
     cell2.innerHTML = value;
     cell3.appendChild(del);
     del.setAttribute("id","del-btn");
-    del.addEventListener("click", function() {
-      var i = del.parentNode.parentNode; // Get the parent row
-      if (i.tagName === 'TR') { // Check if the parent node is a row
-        table.deleteRow(i.rowIndex); // Delete the row
-      }
-    });
+
   }
 }
+del.addEventListener("click", function() {
+    var i = del.parentNode.parentNode; // Get the parent row
+    if (i.tagName === 'TR') { // Check if the parent node is a row
+        table.deleteRow(i.rowIndex); // Delete the row
+        displayArray(shop_list); // may throw up an error EXPERIEMENTAL
+    }
+});
