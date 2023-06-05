@@ -4,11 +4,10 @@ var input_qnty = document.getElementById("qnty-aria");
 var table = document.getElementById('result');
 var table_element = document.getElementsByTagName("tr");
 
-var shop_list = []; // Declare shop_list variable outside initList()
+var shop_list = [];
 
 function initList() {
     shop_list = [];
-    console.log(input_aria);
 }
 
 function CAUitem(itemName, quantity, addToCurrent = true) {
@@ -35,16 +34,13 @@ initList();
 
 input_button.addEventListener("click", function() {
     if (input_aria.value !== "" && input_qnty.value !== "") {
-        CAUitem(input_aria.value, parseFloat(input_qnty.value, 10), true); // true to add to current quantity
-        //clears textbox(s)
+        CAUitem(input_aria.value, parseFloat(input_qnty.value), true);
         input_aria.value = "";
         input_qnty.value = "";
     }
 });
 
-//concentates and displays the array
 function displayArray(arr) {
-    // Clear existing rows with id="tab"
     var tabRows = document.querySelectorAll('#result tr[id="tab"]');
     tabRows.forEach(function(row) {
         row.parentNode.removeChild(row);
@@ -60,26 +56,25 @@ function displayArray(arr) {
         var cell3 = row.insertCell(2);
         var del = document.createElement("input");
         del.type = "button";
-        del.setAttribute('id', 'del-btn'); 
+        del.className = "del-btn";
         row.setAttribute("class", "tab");
         del.value = 'Delete';
         cell1.innerHTML = name;
         cell2.innerHTML = value;
         cell3.appendChild(del);
-        del.setAttribute("data-index", i); // Use data-index to store the index of the item
-        //event listener
+        del.setAttribute("data-index", i);
         del.addEventListener("click", function() {
             var index = parseInt(this.getAttribute("data-index"));
             var row = this.parentNode.parentNode;
             if (row.tagName === 'TR') {
                 table.deleteRow(row.rowIndex);
                 shop_list.splice(index, 1);
-                updateIndices(); // Update the indices after deletion
+                updateIndices();
             }
         });
     }
   
-    updateIndices(); // Update the indices initially
+    updateIndices();
 }
 
 function updateIndices() {
