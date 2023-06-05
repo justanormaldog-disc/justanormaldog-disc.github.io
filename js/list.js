@@ -13,6 +13,7 @@ function initList() {
 
 function CAUitem(itemName, quantity, addToCurrent = true) {
     var lowercaseItemName = itemName.toLowerCase();
+    var itemFound = false;
     for (let i = 0; i < shop_list.length; i++) {
         if (shop_list[i][0].toLowerCase() === lowercaseItemName) {
             if (addToCurrent) {
@@ -20,12 +21,13 @@ function CAUitem(itemName, quantity, addToCurrent = true) {
             } else {
                 shop_list[i][1] = quantity;
             }
-            displayArray(shop_list);
-            return;
+            itemFound = true;
+            break;
         }
     }
-    // If item is not found, add it to the shopping list
-    shop_list.push([itemName, quantity]);
+    if (!itemFound) {
+        shop_list.push([itemName, quantity]);
+    }
     displayArray(shop_list);
 }
 
