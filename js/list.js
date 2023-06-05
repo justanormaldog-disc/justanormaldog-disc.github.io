@@ -11,10 +11,15 @@ function initList() {
     console.log(input_aria);
 }
 
-function CAUitem(itemName, quantity) {
+function CAUitem(itemName, quantity, addToCurrent = true) {
+    var lowercaseItemName = itemName.toLowerCase();
     for (let i = 0; i < shop_list.length; i++) {
-        if (shop_list[i][0].toLowerCase() === itemName.toLowerCase()) {
-            shop_list[i][1] += quantity;
+        if (shop_list[i][0].toLowerCase() === lowercaseItemName) {
+            if (addToCurrent) {
+                shop_list[i][1] += quantity;
+            } else {
+                shop_list[i][1] = quantity;
+            }
             displayArray(shop_list);
             return;
         }
@@ -28,7 +33,7 @@ initList();
 
 input_button.addEventListener("click", function() {
     if (input_aria.value !== "" && input_qnty.value !== "") {
-        CAUitem(input_aria.value, parseFloat(input_qnty.value, 10));
+        CAUitem(input_aria.value, parseFloat(input_qnty.value, 10), true); // true to add to current quantity
         //clears textbox(s)
         input_aria.value = "";
         input_qnty.value = "";
