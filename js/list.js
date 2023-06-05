@@ -62,6 +62,6 @@ del.addEventListener("click", function() {
     var i = del.parentNode.parentNode; // Get the parent row
     if (i.tagName === 'TR') { // Check if the parent node is a row
         table.deleteRow(i.rowIndex); // Delete the row
-        displayArray(shop_list); // may throw up an error EXPERIEMENTAL
+        shop_list[i.rowIndex].delete;
     }
 });
