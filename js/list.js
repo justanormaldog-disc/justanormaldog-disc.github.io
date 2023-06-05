@@ -73,17 +73,3 @@ function updateIndices() {
     }
 }
 
-function init() {
-    document.getElementById("name").innerHTML = 'Hello, ' + user;
-    input_aria.placeholder = aria[Math.floor(Math.random() * aria.length)] + "...";
-    document.getElementById("comment").innerHTML = item;
-    createComment();
-}
-
-function createComment() {
-    item = COMMENTS[Math.floor(Math.random() * COMMENTS.length)];
-    document.getElementById("comment").innerHTML = item;
-}
-
-init();
-initList();
