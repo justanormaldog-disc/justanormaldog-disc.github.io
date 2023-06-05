@@ -54,7 +54,7 @@ function displayArray(arr) {
         var del = document.createElement("input");
         del.type = "button";
         del.setAttribute('id', 'del-btn'); 
-        row.setAttribute("id", "tab");
+        row.setAttribute("class", "tab");
         del.value = 'Delete';
         cell1.innerHTML = name;
         cell2.innerHTML = value;
@@ -76,7 +76,7 @@ function displayArray(arr) {
 }
 
 function updateIndices() {
-    var delButtons = document.getElementsById('del-btn');
+    var delButtons = document.getElementsByClassName('del-btn');
     for (var i = 0; i < delButtons.length; i++) {
         delButtons[i].setAttribute("data-index", i);
     }
