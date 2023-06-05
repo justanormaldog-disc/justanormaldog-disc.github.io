@@ -9,18 +9,20 @@ var shop_list = [];
 function initList() {
     shop_list = [];
 }
-
 function addItem(itemName, quantity) {
     var lowercaseItemName = itemName.toLowerCase();
-    var itemIndex = shop_list.findIndex(function(item) {
-        return item[0].toLowerCase() === lowercaseItemName;
-    });
+    var foundItem = false;
   
-    if (itemIndex !== -1) {
-        // Item already exists, update the quantity
-        shop_list[itemIndex][1] += quantity;
-    } else {
-        // Item doesn't exist, add it to the list
+    for (var i = 0; i < shop_list.length; i++) {
+        var item = shop_list[i];
+        if (item[0].toLowerCase() === lowercaseItemName) {
+            item[1] += quantity;
+            foundItem = true;
+            break;
+        }
+    }
+  
+    if (!foundItem) {
         shop_list.push([itemName, quantity]);
     }
   
