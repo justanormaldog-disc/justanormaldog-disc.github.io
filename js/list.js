@@ -1,7 +1,7 @@
 var input_aria = document.getElementById("input-aria");
 var input_button = document.getElementById("radius");
 var input_qnty = document.getElementById("qnty-aria");
-var table = document.getElementById('result');
+var table = document.getElementById('result');    
 var table_element = document.getElementsByTagName("tr");
 
 var shop_list = []; // Declare shop_list variable outside initList()
@@ -51,14 +51,33 @@ function displayArray(arr) {
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
         var del = document.createElement("input");
+        var edit = document.createElement("input");
         del.type = "button";
+        edit.type = "button";
         del.setAttribute('id', 'del-btn'); 
+        edit.setAttribute('id', 'edit-btn'); 
         row.setAttribute("id", "tab");
         del.value = 'Delete';
+        edit.value = 'Edit';
         cell1.innerHTML = name;
         cell2.innerHTML = value;
         cell3.appendChild(del);
+        cell4.appendChild(edit);
+        
+        edit.setAttribute("data-index", i); // Use data-index to store the index of the item
+        //event listener
+        edit.addEventListener("click", function() {
+            var index = parseInt(this.getAttribute("data-index"));
+            var row = this.parentNode.parentNode;
+            if (row.tagName === 'TR') {
+                table.deleteRow(row.rowIndex);
+                shop_list.splice(index, 1);
+                updateIndices(); // Update the indices after deletion
+            }
+        });
+        
         del.setAttribute("data-index", i); // Use data-index to store the index of the item
         //event listener
         del.addEventListener("click", function() {
