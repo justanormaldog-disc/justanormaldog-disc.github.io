@@ -9,10 +9,11 @@ var shop_list = [];
 function initList() {
     shop_list = [];
 }
+
 function addItem(itemName, quantity) {
     var lowercaseItemName = itemName.toLowerCase();
     var foundItem = false;
-  
+
     for (var i = 0; i < shop_list.length; i++) {
         var item = shop_list[i];
         if (item[0].toLowerCase() === lowercaseItemName) {
@@ -21,29 +22,19 @@ function addItem(itemName, quantity) {
             break;
         }
     }
-  
+
     if (!foundItem) {
         shop_list.push([itemName, quantity]);
     }
-  
+
     displayArray(shop_list);
 }
 
-initList();
-
-input_button.addEventListener("click", function() {
-    if (input_aria.value !== "" && input_qnty.value !== "") {
-        addItem(input_aria.value, parseInt(input_qnty.value));
-        input_aria.value = "";
-        input_qnty.value = "";
-    }
-});
-
 function displayArray(arr) {
-    var tabRows = document.querySelectorAll('#result tr[id="tab"]');
-    tabRows.forEach(function(row) {
-        row.parentNode.removeChild(row);
-    });
+    var rows = table.getElementsByTagName('tr');
+    while (rows.length > 1) {
+        table.removeChild(rows[1]);
+    }
 
     for (var i = 0; i < arr.length; i++) {
         var item = arr[i];
@@ -56,7 +47,6 @@ function displayArray(arr) {
         var del = document.createElement("input");
         del.type = "button";
         del.className = "del-btn";
-        row.setAttribute("class", "tab");
         del.value = 'Delete';
         cell1.innerHTML = name;
         cell2.innerHTML = value;
@@ -72,7 +62,7 @@ function displayArray(arr) {
             }
         });
     }
-  
+
     updateIndices();
 }
 
@@ -82,3 +72,18 @@ function updateIndices() {
         delButtons[i].setAttribute("data-index", i);
     }
 }
+
+function init() {
+    document.getElementById("name").innerHTML = 'Hello, ' + user;
+    input_aria.placeholder = aria[Math.floor(Math.random() * aria.length)] + "...";
+    document.getElementById("comment").innerHTML = item;
+    createComment();
+}
+
+function createComment() {
+    item = COMMENTS[Math.floor(Math.random() * COMMENTS.length)];
+    document.getElementById("comment").innerHTML = item;
+}
+
+init();
+initList();
