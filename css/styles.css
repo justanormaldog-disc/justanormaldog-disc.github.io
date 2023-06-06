@@ -145,3 +145,13 @@ tr:nth-child(even) {
   border: none;
   border-radius: 1.5px;
 }
+
+.edit-btn {
+  font-family: 'Roboto', sans-serif;
+  background-color: cornflowerblue;
+  color: #f4708f;
+  -webkit-text-fill-color: #f4708f;
+  opacity: 1; /* required on iOS */
+  border: none;
+  border-radius: 1.5px;
+}
