@@ -48,28 +48,7 @@ aria = [
 "Canned Tuna",
 "Noodles",
 "Meatballs",
-"Sugar & Salt",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken",
-"twearking chicken"
+"Sugar & Salt"
 ]
 function init() {
 // run functions and other
