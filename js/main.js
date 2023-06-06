@@ -1,7 +1,7 @@
 var user,comment,item;
 var input_aria = document.getElementById("input-aria");
 var input_button = document.getElementById("input-form");
-user = 'Jackson';
+user = 'Ballzy man who dares cross me';
 
 //list of comments
 const COMMENTS = [
