@@ -1,7 +1,7 @@
 var user,comment,item;
 var input_aria = document.getElementById("input-aria");
 var input_button = document.getElementById("input-form");
-user = 'Ballzy man who dares cross me';
+user = 'Jackson or Ethan';
 
 //list of comments
 const COMMENTS = [
@@ -48,7 +48,28 @@ aria = [
 "Canned Tuna",
 "Noodles",
 "Meatballs",
-"Sugar & Salt"
+"Sugar & Salt",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken",
+"twearking chicken"
 ]
 function init() {
 // run functions and other
