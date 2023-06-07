@@ -136,7 +136,7 @@ tr:nth-child(even) {
   margin: 1vh;
 }
 
-.del-btn {
+.del-btn, .edit-btn {
   font-family: 'Roboto', sans-serif;
   background-color: cornflowerblue;
   color: #f4708f;
