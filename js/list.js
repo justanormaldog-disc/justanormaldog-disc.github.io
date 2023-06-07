@@ -11,6 +11,7 @@ function initList() {
     console.log(input_aria);
 }
 
+// revise CAUitem for bug fix
 function CAUitem(itemName, quantity) {
     for (let i = 0; i < shop_list.length; i++) {
         if (shop_list[i][0].toLowerCase() === itemName.toLowerCase()) {
@@ -23,7 +24,7 @@ function CAUitem(itemName, quantity) {
     shop_list.push([itemName, quantity]);
     displayArray(shop_list);
 }
-
+//
 initList();
 
 input_button.addEventListener("click", function() {
