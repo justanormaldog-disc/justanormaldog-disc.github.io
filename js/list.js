@@ -38,11 +38,10 @@ input_button.addEventListener("click", function() {
 
 //concentates and displays the array
 function displayArray(arr) {
-    // Clear existing rows with id="tab"
-    var tabRows = document.querySelectorAll('#result tr[id="tab"]');
-    tabRows.forEach(function(row) {
-        row.parentNode.removeChild(row);
-    });
+    tr = document.getElementsByClassName("tab");
+    while (tr.length != 0) {
+        table.deleteRow(1);
+    };
 
     for (var i = 0; i < arr.length; i++) {
         var item = arr[i];
