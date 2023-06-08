@@ -57,6 +57,7 @@ function displayArray(arr) {
         row.setAttribute("class", "tab");
         del.value = 'Delete';
         cell1.innerHTML = name;
+        cell1.setAttribute("class", "cell-name");
         cell2.innerHTML = value;
         cell3.appendChild(del);
         del.setAttribute("data-index", i); // Use data-index to store the index of the item
