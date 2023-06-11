@@ -1,3 +1,3 @@
-# justanormaldog-disc.github.io
+# Firebase data
 
-if you got here you did better than 2.5e-8% of the population
+firebase data JS
