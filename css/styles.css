@@ -11,7 +11,7 @@
   .list input,
   .list .input-form {
     font-size: 16px;
-    margin: 5px;
+    margin: 0 5px 5px 5px 5px;
   }
 }
 
@@ -111,7 +111,7 @@ tr:nth-child(even) {
 .list input,
 .list .input-form {
   font-size: 20px; /* Increase the font size as per your requirement */
-  margin: 10px; /* Adjust the margin as needed */
+  margin: 0 10px 10px 10px; /* Adjust the margin as needed */
   height: calc(100% - 4px); /* Subtract the total border height from the desired height */
 }
 
@@ -149,4 +149,98 @@ tr:nth-child(even) {
 .del-btn:hover {
   color: #CF505D;
   -webkit-text-fill-color: #CF505D;
+}
+
+.search-bar {
+  display:block;
+  padding: 1px 0px 1px 5px;
+  border: none;
+  border: 2px solid rgb(65, 60, 60);
+  border-radius: 16px;
+  text-indent: 10px;
+  margin-left:auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  font-size: 20px; /* Increase the font size as per your requirement */
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color:#0096FF;
+  box-shadow:0 0 0 1px rgb(137, 207, 240);
+}
+
+.alert {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: absolute;
+  background-color: #f44336;
+  color:#F6E8E0;
+  padding:1%;
+  text-align: start;
+  bottom: 2.5%;
+  right: 5%;
+  border-radius: 3px;
+  word-wrap: break-word;
+}
+
+.modal {
+  /*positioning*/
+  position: absolute;
+  top: 50%;
+  left:50%;
+  text-align:center;
+  transform: translate(-50%, -50%);
+  /*color*/
+  display: none;
+  background-color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.buttonOk {
+  border-radius: 3px;
+  background-color:#87d767;
+  border:none;
+}
+
+.buttonOk:hover, .buttonCancel:hover {
+  filter: brightness(0.9);
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.div-modalcheckbox {
+  display:inline-block;
+  font-size:small;
+}
+
+.buttonCancel {
+  border-radius: 3px;
+  background-color:#CF505D;
+  border:none;
+}
+
+.modal-checkbox:hover {
+  cursor: pointer;
+}
+
+.modal-checkbox:checked {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+.buttonOk, .buttonCancel {
+  color: black;
+  -webkit-text-fill-color: black;
+}
+
+.nosee {
+  position:absolute;
+  background-color:black;
+  opacity: 0.8;
+  z-index: 999;
+  width:125%;
+  height: 125%;
+  display:none;
 }
