@@ -6,7 +6,7 @@ var table_element = document.getElementsByTagName("tr");
 
 // imports
 import { getData, pushData, deleteItem }
-from "https://raw.githubusercontent.com/justanormaldog-disc/justanormaldog-disc.github.io/firebaseData/firebase.js";
+from "https://cdn.jsdelivr.net/gh/justanormaldog-disc/justanormaldog-disc.github.io@firebaseData/firebase.js";
 //flags
 modal_checkbox = false;
 var shop_list = []; // Declare shop_list variable outside initList()
