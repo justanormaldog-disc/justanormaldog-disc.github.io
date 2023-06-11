@@ -11,15 +11,32 @@
 
   <link href="css/styles.css" rel="stylesheet">
 </head>
+<div class="nosee" id="nosee">
 
+</div>
 <body>
-
-  <div class="container" id="container">
+  <!--modal box-->
+  <div class="modal" id="modal">
+    <p id="modal-p"></p>
+    <h3>Are you sure?</h3>
+    <input type="checkbox" class="modal-checkbox" id="modal-checkbox">
     
+    <div class="div-modalcheckbox">
+      <input type="button" value="OK" class="buttonOk" id="ok" onclick="btnOk()">
+      <input type="button" value="Cancel" class="buttonCancel" id="buttonCancel" onclick="btnCancel()">
+      <p>Do not show again</p>
+    </div>
+
+  </div>
+  <div class="container" id="container">
+
     <h1 class="name" id="name"></h1>
+
     <h2 class="comment" id="comment"></h2>
     <h2 class="listHeader">Shopping List</h2>
     <hr>
+    <!--Search Bar-->
+    <input type="text" placeholder="Search Here" id="search-bar" class="search-bar" onkeyup="searchItems()">
     <!--list-->
     <div class="list" id="list">
       <!--Inputs-->
@@ -47,7 +64,10 @@
     </table>
     <!--Display paragraph-->
      </div>
+
+
     <!--scripts-->
+
     <script src="js/main.js"></script>
     <script src="js/list.js"></script>
 </body>
