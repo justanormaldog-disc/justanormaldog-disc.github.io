@@ -22,7 +22,7 @@ function CAUitem(itemName, quantity) {
             let qnty = quantity;
             let name = itemName;
             let info = 'An item already exists with the same name. If you continue, ${qnty} will be added onto the item \'${name}\'s quantity.';
-            modalP.innerHTML = ;
+            modalP.innerHTML = info;
             modal[0].style.display = "block";
             modal[0].style.zIndex = 9999;
             modal[0].style.top = "50%"; // Adjust the position based on your modal design
