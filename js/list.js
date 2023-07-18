@@ -19,10 +19,7 @@ function CAUitem(itemName, quantity) {
         var nosee = document.getElementById("nosee");
         if (shop_list[i][0].toLowerCase() === itemName.toLowerCase()) {
             if (modal_checkbox == false) {
-            let qnty = quantity;
-            let name = itemName;
-            let info = `An item already exists with the same name. If you continue, ${qnty} will be added onto the item \'${name}\'s quantity.`;
-            modalP.innerHTML = info;
+            modalP.innerHTML = `An item already exists with the same name. If you continue, ${quantity} will be added onto the item \'${itemName}\'s quantity.`;;
             modal[0].style.display = "block";
             modal[0].style.zIndex = 9999;
             modal[0].style.top = "50%"; // Adjust the position based on your modal design
